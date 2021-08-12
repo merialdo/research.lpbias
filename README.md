@@ -1,6 +1,6 @@
 # research.lpbias
+This repository contains the code, datasets, results, and in general digital resources used in our paper "_Knowledge Graph Embeddings or Bias Graph Embeddings? A Study of Bias in Link Prediction Models_", in which we study the effect of bias in Link Prediction (LP) models on Knowledge Graphs (KGs). 
 
-We study the effect of bias in Link Prediction (LP) models on Knowledge Graphs (KGs). 
 We define three main types of bias in the Link Prediction context: 
 
 - **Type 1 Bias**: A tail prediction <*h*, *r*, *t*> is prone to Type 1 Bias if the training facts mentioning *r* tend to always feature *t* as tail. 
@@ -58,9 +58,9 @@ The following commands check, for any test prediction in these datasets, if the 
 
 ## Bias effects on LP datasets
 We assess the number of bias-prone test predictions in LP datasets with the following command:
-```python
-python3 scripts/compute_dataset_size_removing_bias.py --dataset FB15k --bias 1
-```
+  ```python
+  python3 scripts/compute_dataset_size_removing_bias.py --dataset FB15k --bias 1
+  ```
 
 Acceptable values for the `--dataset` parameter are `FB15k`, `WN18`, `FB15k-237`, `WN18RR`, and `YAGO3-10`. ; acceptable values for the `--bias` parameter are `1`, `2`, `3` and `any`.
 Using value `any` for the `--bias` parameter, all test facts prone to any of the 3 bias types will be taken into account.
@@ -81,9 +81,9 @@ For the sake of completeness, we include in this repository, in folder `comparat
 
 The analysis on the effects of the various types of bias on all models can be run using the following command:
 
-```python
-python3 scripts/compute_performance_removing_bias.py --dataset FB15k --bias 1
-```
+  ```python
+  python3 scripts/compute_performance_removing_bias.py --dataset FB15k --bias 1
+  ```
 As in the previous command, acceptable values for the `--dataset` parameter are `FB15k`, `WN18`, `FB15k-237`, `WN18RR`, and `YAGO3-10`; acceptable values for the `--bias` parameter are `1`, `2`, `3` and `any`; using value `any` for the `--bias` parameter, all test facts prone to any of the 3 bias types will be taken into account.
 
 The overall results show that the 3 forms of bias taken into account heavily affect LP models on `FB15k`, `FB15k-237` and `YAGO3-10`: 
@@ -94,9 +94,9 @@ The overall results show that the 3 forms of bias taken into account heavily aff
 
 Datasets WN18 and WN18RR are apparently more robust to bias; these datasets, however, are known for the pervasive presence of inverse and symmetric relations. 
 For the sake of completeness we carry out the same type of analysis performed on biases removing the test predictions featuring inverse and/or symmetric relations:
-```python
-python3 scripts/compute_performance_removing_property.py --dataset WN18 --property inverse
-```
+  ```python
+  python3 scripts/compute_performance_removing_property.py --dataset WN18 --property inverse
+  ```
 In this case, acceptable values for the `--dataset` parameter are `WN18` and `WN18RR`; acceptable values for the `--property` parameter are `inverse`, `symmetric` and `any`; using value `any` for the `--property` parameter, all test facts containing either inverse or symmetric relations will be taken into account.
 
 Our results show that, as a matter of facts, WN18 and WN18RR are not more desirable than the other datasets: the main reason behind their robustness to bias seems to just be the presence of inverse and symmetric relations making test predictions artificially easier.
