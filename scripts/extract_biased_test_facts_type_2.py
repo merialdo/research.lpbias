@@ -10,9 +10,8 @@ THRESHOLD = 0.75
 
 outlines = []
 for dataset_name in ALL_DATASET_NAMES:
-    print(dataset_name)
-
     data = Dataset(dataset_name)
+    print("Identifying test predictions prone to bias type 2 in dataset " + dataset_name + "...")
 
     train_triples = data.train_triples
     test_triples = data.test_triples

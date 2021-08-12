@@ -4,14 +4,14 @@ sys.path.append(os.path.realpath(os.path.join(os.path.abspath(__file__), os.path
 
 import argparse
 from dataset import Dataset
-from config import ALL_DATASET_NAMES, BIAS_DATA_PATH, ALL_MODEL_NAMES
+from config import BIAS_DATA_PATH, ALL_MODEL_NAMES, WN18, WN18RR
 from results import read_results_for, compute_metrics_for
 
 parser = argparse.ArgumentParser(description="Assess the number of test predictions affected by a certain type of bias in a dataset")
 
 parser.add_argument('--dataset',
-                    choices=ALL_DATASET_NAMES,
-                    help="Dataset in {}".format(ALL_DATASET_NAMES),
+                    choices=[WN18, WN18RR],
+                    help="Dataset in {}".format([WN18, WN18RR]),
                     required=True)
 
 parser.add_argument("--property",

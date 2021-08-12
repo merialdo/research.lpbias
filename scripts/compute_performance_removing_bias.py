@@ -4,7 +4,7 @@ sys.path.append(os.path.realpath(os.path.join(os.path.abspath(__file__), os.path
 
 import argparse
 from dataset import Dataset
-from config import ALL_DATASET_NAMES, BIAS_DATA_PATH, ALL_MODEL_NAMES, CAPSE, YAGO3_10
+from config import ALL_DATASET_NAMES, BIAS_DATA_PATH, ALL_MODEL_NAMES
 from results import read_results_for, compute_metrics_for
 
 parser = argparse.ArgumentParser(description="Assess the number of test predictions affected by a certain type of bias in a dataset")

@@ -8,9 +8,8 @@ from config import ALL_DATASET_NAMES, BIAS_DATA_PATH
 
 outlines = []
 for dataset_name in ALL_DATASET_NAMES:
-    print(dataset_name)
-
     data = Dataset(dataset_name)
+    print("Identifying test predictions prone to bias type 3 in dataset " + dataset_name + "...")
 
     train_triples = data.train_triples
     test_triples = data.test_triples

@@ -90,5 +90,5 @@ for (h, r, t) in d.test_triples:
 
 print("\tAll " + d.name + " test facts: " + str(len(d.test_triples)))
 print("\tAll " + d.name + " test predictions: " + str(all_predictions))
-print("\tTest predictions suffering from bias type \"" + bias_type + "\": " + str(all_predictions-debiased_predictions))
-print("\tTest predictions not suffering from bias type \"" + bias_type + "\": " + str(debiased_predictions) + " (" + str(round(float(debiased_predictions-all_predictions)/float(all_predictions)*100, 1)) + "%)")
+print("\tTest predictions prone type \"" + bias_type + "\" bias: " + str(all_predictions-debiased_predictions))
+print("\tTest predictions not prone to type \"" + bias_type + "\" bias: " + str(debiased_predictions) + " (" + str(round(float(debiased_predictions-all_predictions)/float(all_predictions)*100, 1)) + "%)")
