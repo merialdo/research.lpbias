@@ -72,8 +72,7 @@ The results show that significant portions of `FB15k`, `FB15k-237` and `YAGO3-10
 
 ## Effects of bias on performance of LP models
 
-We verify the effect of bias on the behaviour of multiple LP models. 
-We first compute their predictive performance across all test predictions; we then filter away the bias-prone predictions and recompute the evaluation metrics.
+To verify the effect of bias on the behaviour of multiple LP models, we first compute their predictive performance across all test predictions; we then filter away the bias-prone predictions and recompute the evaluation metrics.
 If in the latter scenario results are worse than the former, this means that the presence of bias actually affected the behaviour of LP models.
 In other words, when this happens bias has made the bias-prone predictions easier than average: this is why removing them decreases the overall performance of models.
 
@@ -90,11 +89,17 @@ As in the previous command, acceptable values for the `--dataset` parameter are 
 The overall results show that the 3 forms of bias taken into account heavily affect LP models on `FB15k`, `FB15k-237` and `YAGO3-10`: 
 
 <p align="center">
-<img width="80%" alt="hyperparams" src="https://user-images.githubusercontent.com/6909990/129210983-99685158-18b0-49bc-8218-b321dd3a1199.png">
+<img width="90%" alt="hyperparams" src="https://user-images.githubusercontent.com/6909990/129210983-99685158-18b0-49bc-8218-b321dd3a1199.png">
 </p>
 
-Datasets WN18 and WN18RR are apparently more robust to bias. However this does not make them more desirable, as the main reason of this robustness seems to be the pervasive presence of inverse and symmetric relations.
+Datasets WN18 and WN18RR are apparently more robust to bias; these datasets, however, are known for the pervasive presence of inverse and symmetric relations. 
+For the sake of completeness we carry out the same type of analysis performed on biases removing the test predictions featuring inverse and/or symmetric relations:
+```python
+python3 scripts/compute_performance_removing_property.py --dataset WN18 --property inverse
+```
+In this case, acceptable values for the `--dataset` parameter are `WN18` and `WN18RR`; acceptable values for the `--property` parameter are `inverse`, `symmetric` and `any`; using value `any` for the `--property` parameter, all test facts containing either inverse or symmetric relations will be taken into account.
 
+Our results show that, as a matter of facts, WN18 and WN18RR are not more desirable than the other datasets: the main reason behind their robustness to bias seems to just be the presence of inverse and symmetric relations making test predictions artificially easier.
 <p align="center">
-<img width="80%" alt="hyperparams" src="https://user-images.githubusercontent.com/6909990/129211000-c59811a2-421d-4759-b56c-58b387d3923b.png">
+<img width="90%" alt="hyperparams" src="https://user-images.githubusercontent.com/6909990/129211000-c59811a2-421d-4759-b56c-58b387d3923b.png">
 </p>
