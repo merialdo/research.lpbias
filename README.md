@@ -76,8 +76,8 @@ To verify the effect of bias on the behaviour of multiple LP models, we first co
 If in the latter scenario results are worse than the former, this means that the presence of bias actually affected the behaviour of LP models.
 In other words, when this happens bias has made the bias-prone predictions easier than average: this is why removing them decreases the overall performance of models.
 
-We use as a starting point the publicly available evaluation results of *19* LP models computed in (our recent Comparative Analysis of LP models)[https://github.com/merialdo/research.lpca].
-For the sake of completeness, we include in this repository, in folder `comparative_analysis_results`, a copy of the specific files that we have used as an input in our work.
+We use as a starting point the publicly available evaluation results of *19* LP models computed in [our recent Comparative Analysis of LP models](https://github.com/merialdo/research.lpca).
+For the sake of completeness, we include in this repository, in folder `comparative_analysis_results`, a copy of the specific files that we have used as an input in our work. More details on the included models, including their hyperparameters, can be found in the Comparative Analysis repository.
 
 The analysis on the effects of the various types of bias on all models can be run using the following command:
 
