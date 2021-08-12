@@ -1,5 +1,5 @@
 # research.lpbias
-This repository contains the code, datasets, results, and in general digital resources used in our paper "_Knowledge Graph Embeddings or Bias Graph Embeddings? A Study of Bias in Link Prediction Models_", in which we study the effect of bias in Link Prediction (LP) models on Knowledge Graphs (KGs). 
+This repository contains the code, datasets, results, and in general digital resources used in our paper "_Knowledge Graph Embeddings or Bias Graph Embeddings? A Study of Bias in Link Prediction Models_", in which we study the effect of various forms of selection bias in the field of Link Prediction (LP) on Knowledge Graphs (KGs). 
 
 We define three main types of bias in the Link Prediction context: 
 
